@@ -28,6 +28,7 @@ We are experimenting with multiple models to compare performance:
 
 * **LSTM (Long Short-Term Memory)** – Deep learning model for sequential data *(Eniya Madden)*
 * **Random Forest Classifier** – Ensemble-based machine learning model *(Sania Ali)*
+* **LinearSVC (Linear Support Vector Classifier)** - A supervised learning model that finds a hyperplane to separate categories *(Maryum Ahmad)*
 * Additional models (TBD)
 
 ---
