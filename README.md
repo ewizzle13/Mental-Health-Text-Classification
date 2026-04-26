@@ -76,22 +76,16 @@ We are experimenting with multiple models to compare performance:
 ## Project Structure
 
 ```
-├── data/
+.
+├── data
 │   └── CombinedData.csv
-├── notebooks/
-│   └── model_training.ipynb
-├── src/
-│   ├── preprocessing.py
-│   ├── feature_engineering.py
-│   └── models/
-│       ├── lstm_model.py
-│       ├── random_forest.py
-│       ├── xgboost_model.py
-│       └── custom_nn.py
-├── results/
-│   ├── plots/
-│   └── metrics/
-└── README.md
+├── notebooks
+│   ├── lstm_model.ipynb
+│   ├── random_forest.ipynb
+│   ├── custom_nn.ipynb
+│   ├── xgboost_model.ipynb
+│   └── xgboost_updated.ipynb
+├── README.md
 ```
 
 ---
