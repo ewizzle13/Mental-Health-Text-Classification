@@ -1,6 +1,6 @@
-#  Mental Health Text Classification using NLP
+# Mental Health Text Classification using NLP
 
-##  Project Overview
+## Project Overview
 
 This project focuses on building a **machine learning-based text classifier** to analyze mental health-related statements and predict psychological status. The goal is to explore how **unique word patterns** and linguistic features can assist in identifying potential mental health conditions.
 
@@ -22,15 +22,14 @@ We investigate multiple machine learning approaches to determine which models pe
 
 ---
 
-##  Models Used
+## Models Used
 
 We are experimenting with multiple models to compare performance:
 
-* **LSTM (Long Short-Term Memory)** – Deep learning model for sequential data *(Eniya Madden)*
-* **Random Forest Classifier** – Ensemble-based machine learning model *(Sania Ali)*
-* **LinearSVC (Linear Support Vector Classifier)** - A supervised learning model that finds a hyperplane to separate categories *(Maryum Ahmad)*
-* Additional models (TBD)
-
+* **LSTM (Long Short-Term Memory)** – Deep learning model for sequential text data *(Eniya Madden)*
+* **Random Forest Classifier** – Ensemble-based machine learning model*(Maryum Ahmad)*
+* **XGBoost Classifier** – Gradient boosting model for high-performance classification *(Sania Ali)*
+* **Custom Neural Network (Dense NN)** – Feedforward neural network for classification *(Andrew Allison)*
 ---
 
 ## Methodology
@@ -38,20 +37,20 @@ We are experimenting with multiple models to compare performance:
 ### 1. Data Preprocessing
 
 * Removed missing values
-* Tokenized text (lowercasing, splitting)
-* Extracted **unique words** per statement
+* Tokenized text using Keras Tokenizer (with vocabulary size of 10,000)
+* Converted text into padded sequences (fixed length of 64 tokens)
 
 ### 2. Feature Engineering
 
-* Created custom word embeddings (300-dimensional vectors)
-* Generated feature vectors by averaging word embeddings
-* Focus on **unique vocabulary patterns** in each statement
+* Transformed text into numerical representations using tokenization and sequencing
+* Applied padding to ensure consistent input length across all samples
+* Focused on preserving important word patterns within each statement
 
 ### 3. Model Training
 
 * Split dataset into training and testing sets (70/30)
 * Trained models using labeled mental health status data
-* Used validation split to monitor performance
+* Used validation split and early stopping (for neural networks) to monitor performance and prevent overfitting
 
 ### 4. Evaluation Metrics
 
@@ -65,14 +64,16 @@ We are experimenting with multiple models to compare performance:
 
 ## Results (Placeholder)
 
-| Model         | Accuracy | F1 Score | Precision | Recall |
-| ------------- | -------- | -------- | --------- | ------ |
-| LSTM          | TBD      | TBD      | TBD       | TBD    |
-| Random Forest | TBD      | TBD      | TBD       | TBD    |
+| Model             | Accuracy | F1 Score | Precision | Recall |
+| ----------------- | -------- | -------- | --------- | ------ |
+| LSTM              | 0.73     | 0.73     | 0.73      | 0.73   |
+| Random Forest     | TBD      | TBD      | TBD       | TBD    |
+| XGBoost           | 0.72     | 0.72     | 0.72      | 0.73   |
+| Custom Neural Net | 0.72     | 0.72     | 0.75      | 0.72   |
 
 ---
 
-##  Project Structure
+## Project Structure
 
 ```
 ├── data/
@@ -84,7 +85,9 @@ We are experimenting with multiple models to compare performance:
 │   ├── feature_engineering.py
 │   └── models/
 │       ├── lstm_model.py
-│       └── random_forest.py
+│       ├── random_forest.py
+│       ├── xgboost_model.py
+│       └── custom_nn.py
 ├── results/
 │   ├── plots/
 │   └── metrics/
@@ -107,4 +110,3 @@ We are experimenting with multiple models to compare performance:
 * Course: Natural Language Processing (NLP)
 * Project Type: Group Course Project
 * Focus: Text Classification in Mental Health
-
